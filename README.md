@@ -18,9 +18,8 @@ Upload the folder containing `index.html`, `style.css`, `script.js`, and `assets
 
 ## Included
 - White and sea-blue aquaculture design, responsive on phone and desktop.
-- Practice cards open the selected guidance in a new tab.
-- Navigation links and weekly activity reports open in new tabs.
-- Gallery filters open a new tab with the selected week; the contact form opens the email app in a new tab.
+- Navigation links, practice cards, weekly reports and gallery filters reuse one new browser tab.
+- The contact form opens the email app in that tab.
 - Eight clickable weekly activity reports.
 - The exact six-day activity summaries and learning outcomes for Weeks 1–6, transcribed from the supplied Program Book.
 - Weeks 7–8 are represented as mini-project milestones; the PDF does not provide six-day logs for those weeks.

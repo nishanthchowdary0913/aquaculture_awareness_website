@@ -12,16 +12,16 @@ const practices=[
 ["Harvest & records","Handle fish hygienically at harvest. Keep records of stocking dates, feed, water readings, growth and sales.","📋"]
 ];
 const pg=document.getElementById('practiceGrid');
-practices.forEach((p,i)=>{let a=document.createElement('a');a.className='practice-card';a.href=new URL(`#practice-${i+1}`,location.href).href;a.target='_blank';a.rel='noopener noreferrer';a.innerHTML=`<small>PRACTICE 0${i+1} · ${p[2]}</small><b>${p[0]}</b><p>Open guidance in a new tab →</p>`;pg.appendChild(a)});
+practices.forEach((p,i)=>{let a=document.createElement('a');a.className='practice-card';a.href=new URL(`#practice-${i+1}`,location.href).href;a.target='aquacultureContent';a.innerHTML=`<small>PRACTICE 0${i+1} · ${p[2]}</small><b>${p[0]}</b><p>Open guidance in the new tab →</p>`;pg.appendChild(a)});
 const wg=document.getElementById('weekGrid'),wr=document.getElementById('weekReport');
-weeks.forEach(w=>{let a=document.createElement('a');a.className='week-card';a.href=new URL(`#week-${w.n}`,location.href).href;a.target='_blank';a.rel='noopener noreferrer';a.innerHTML=`<b>WEEK 0${w.n}</b><small>${w.dates}</small><p>${w.title} · Open report in new tab ↗</p>`;wg.appendChild(a)});
+weeks.forEach(w=>{let a=document.createElement('a');a.className='week-card';a.href=new URL(`#week-${w.n}`,location.href).href;a.target='aquacultureContent';a.innerHTML=`<b>WEEK 0${w.n}</b><small>${w.dates}</small><p>${w.title} · Open report in the new tab ↗</p>`;wg.appendChild(a)});
 const gallery=document.getElementById('photos'),filters=document.getElementById('filters');
 function showPhotos(which='all'){gallery.innerHTML='';Object.entries(photos).filter(([w])=>which==='all'||w===which).forEach(([w,files])=>files.forEach((f,i)=>{let fig=document.createElement('figure');fig.innerHTML=`<img loading="lazy" src="assets/${f}" alt="Community fieldwork week ${w}"><figcaption>Week ${w} · Field activity photograph ${i+1}</figcaption>`;gallery.appendChild(fig)}))}
 const galleryWeek=new URLSearchParams(location.search).get('gallery');
 const initialGalleryWeek=galleryWeek==='all'||['2','3','4','5','6'].includes(galleryWeek)?galleryWeek:'all';
-['All','Week 2','Week 3','Week 4','Week 5','Week 6'].forEach((t,i)=>{let a=document.createElement('a');let week=i===0?'all':String(i+1);let url=new URL(location.href);url.searchParams.set('gallery',week);url.hash='gallery';a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=t;if(week===initialGalleryWeek)a.className='active';filters.appendChild(a)});showPhotos(initialGalleryWeek);
+['All','Week 2','Week 3','Week 4','Week 5','Week 6'].forEach((t,i)=>{let a=document.createElement('a');let week=i===0?'all':String(i+1);let url=new URL(location.href);url.searchParams.set('gallery',week);url.hash='gallery';a.href=url.href;a.target='aquacultureContent';a.textContent=t;if(week===initialGalleryWeek)a.className='active';filters.appendChild(a)});showPhotos(initialGalleryWeek);
 document.getElementById('menu').onclick=()=>document.getElementById('nav').classList.toggle('open');document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>document.getElementById('nav').classList.remove('open'));
-document.getElementById('feedback').onsubmit=e=>{e.preventDefault();let d=new FormData(e.target);let body=`Hello, my name is ${d.get('name')}. My question is: ${d.get('question')}`;document.getElementById('formMsg').textContent='Opening your email app to send this question.';window.open('mailto:?subject='+encodeURIComponent('Aquaculture question')+'&body='+encodeURIComponent(body),'_blank','noopener,noreferrer')};
+document.getElementById('feedback').onsubmit=e=>{e.preventDefault();let d=new FormData(e.target);let body=`Hello, my name is ${d.get('name')}. My question is: ${d.get('question')}`;document.getElementById('formMsg').textContent='Opening your email app to send this question.';window.open('mailto:?subject='+encodeURIComponent('Aquaculture question')+'&body='+encodeURIComponent(body),'aquacultureContent')};
 
 function openPracticeFromHash(){
 const match=location.hash.match(/^#practice-(\d+)$/);
