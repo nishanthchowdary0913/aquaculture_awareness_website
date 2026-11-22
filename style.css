@@ -6,3 +6,21 @@ iframe[src*="netlify"], iframe[data-netlify], iframe {
   width: 0 !important;
   height: 0 !important;
 }
+.practice-card, .week-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.filters a {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 20px;
+  padding: 8px 13px;
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+.filters a.active {
+  background: var(--teal);
+  color: white;
+}
