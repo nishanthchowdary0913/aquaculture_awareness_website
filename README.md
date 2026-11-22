@@ -18,7 +18,7 @@ Upload the folder containing `index.html`, `style.css`, `script.js`, and `assets
 
 ## Included
 - White and sea-blue aquaculture design, responsive on phone and desktop.
-- Navigation links, practice cards, weekly reports and gallery filters reuse one new browser tab.
+- Navigation links, practice cards, weekly reports and gallery filters open in a new browser tab when clicked.
 - The contact form opens the email app in that tab.
 - Eight clickable weekly activity reports.
 - The exact six-day activity summaries and learning outcomes for Weeks 1–6, transcribed from the supplied Program Book.
