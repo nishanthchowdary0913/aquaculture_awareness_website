@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: aquaculture-awareness
+    runtime: static
+    buildCommand: echo "No build required"
+    staticPublishPath: .
